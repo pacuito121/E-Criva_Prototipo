@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/historia.css">
+    <link rel="stylesheet" href="/css/personajes.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img onclick="window.location.href='../index.html'" src="/Resource/Img/Logo.png" id="logo" alt="">
+            <h1>E-Criva</h1>
+        </div>
+        <div id="sech" onclick="window.location.href='cuenta.html'">
+            <img src="/Resource/Img/Invitado.png" alt="">
+        </div>   
+    </header>
+    <nav>
+        <div>
+            <p id="tapaSub">Mundo ▼</p> 
+            <div id="subsu">
+                <p onclick="window.location.href='historias.html'">Historia</p>
+                <p onclick="window.location.href='objetos.html'">Objeto</p>
+                <p onclick="window.location.href='personajes.html'">Personajes</p>
+            </div>
+        </div>
+        
+        <p onclick="window.location.href='galeria.html'">Galeria</p>
+        <p onclick="window.location.href='contacto.html'">Contactos</p>
+    </nav>
+    <main>
+        <h2>Objetos propios</h2>
+        <div id="more">
+            <strong>(+) Crear nuevo</strong>
+        </div>
+        <hr>
+        <h2>Herramientas y estructuras</h2>
+        <section id="herramientas">
+            <a href="/Resource/files/Antiheroe.pdf" download="Protagonista Trágico.pdf">
+                <div class="seru" id="one">
+                    <h3>Protagonista Trágico / Antihéroe</h3>
+                </div>
+            </a>
+            <a href="/Resource/files/El_Mentor.pdf" download="El mentor.pdf">
+                <div class="seru" id="two">
+                    <h3>El Mentor</h3>
+                </div>
+            </a>
+            <a href="/Resource/files/Personaje_Espejo.pdf" download="El Personaje Espejo (Foil).pdf">
+                <div class="seru" id="three">
+                    <h3>El Personaje Espejo (Foil)</h3>
+                </div>
+            </a>
+            <a href="/Resource/files/El_Antagonista.pdf" download="El antagonista.pdf">
+                <div class="seru" id="four">
+                    <h3>El Antagonista</h3>
+                </div>
+            </a>
+            <a href="/Resource/files/Personaje_Dinamico.pdf" download="El personaje dinámico.pdf">
+                <div class="seru" id="five">
+                    <h3>Personaje Dinámico</h3>
+                </div>
+            </a>
+            <a href="/Resource/files/El_Heraldo.pdf" download="El heraldo.pdf">
+                <div class="seru" id="six">
+                    <h3>El Heraldo</h3>
+                </div>
+            </a>
+        </section> 
+        <p align="center">Al dar click en alguna herramienta se descargara un pdf informativo</p>
+        <hr>
+        <h2>Material de apoyo</h2>
+        <section id="mmedia">
+            <div>
+                <strong></strong>
+                <div></div>
+            </div>
+            <div id="res"></div>
+        </section>
+    </main>
+    <footer>
+        <div id="super">
+            <div>
+                <h3>Documentos legales</h3>
+                <div id="leyes">
+                    <p>Aviso legal</p>
+                    <p>Política de privacidad y protección de datos</p>
+                    <p>Política de cookies</p>
+                    <p>Términos y condiciones de uso</p>
+                </div>
+            </div>
+            <div>
+                <h3 id="RedesTitle">Redes sociales</h3>
+                <div id="media">        
+                    <img src="/Resource/Img/DA.png" alt="">
+                    <img src="/Resource/Img/Facebook.png" alt="">
+                    <img src="/Resource/Img/Tiktok.png" alt="">
+                    <img src="/Resource/Img/Youtube.png" alt="">
+                </div>
+            </div>
+        </div>
+        <legend> Copyright © 2026 e-criva. All rights reserved. </legend>
+    </footer>
+    <div id="Shadow">
+        <img src="" alt="">
+    </div>
+
+    <!-- <script>
+        function tripleTrouble(a){
+            window.location.href=`historias.html?Variante=${a}`
+        }
+        document.addEventListener("DOMContentLoaded",()=>{
+            let a = new URLSearchParams(window.location.search)
+            let create = document.querySelector("#more strong")
+            let gete = a.get("Variante") || "Elemento"
+            create.innerText = `(+) Crear nuevo ${gete}`
+        })
+        let panel = document.getElementsByClassName("seru")[0]
+    </script> -->
+    <script src="/js/base.js"></script>
+    <script type="module">
+    import { openDB } from 'https://cdn.jsdelivr.net/npm/idb@8/build/index.js';
+
+    async function CrearAbrir() {
+        const db = await openDB("Ecriva", 1, {
+            upgrade(db) {
+                db.createObjectStore('Users', { keyPath: 'id' });
+            },
+        });
+        
+        await db.put('Users', { id: 1, nombre: 'Master' });
+        console.log("Base de datos de E-Criva inicializada y usuario guardado");
+    }
+    CrearAbrir();
+</script>
+</body>
+</html>

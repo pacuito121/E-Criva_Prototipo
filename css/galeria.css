@@ -1,0 +1,106 @@
+body{
+    position: relative;
+}
+#sea{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 5px;
+    gap: 5px;
+}
+#ipo{
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: center;
+    flex-grow: 3;
+    gap: 5px;
+}
+#ipo img{
+    height: 1.5rem;
+    object-fit: contain;
+    flex-grow: 0;
+}
+#ipo input[type="text"]{
+    border: 0px solid transparent;
+    flex-grow: 5;
+}
+#filters{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: coral;
+    width: 10%;
+    text-align: center;
+    flex-grow: 1;
+}
+#filters strong{
+    font-size: 16px;
+    font-weight: bold;
+}
+#background {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+#background.activo {
+    display: flex; 
+}
+
+#background::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+#menu {
+    background-color: antiquewhite;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#menu div{
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
+}
+#menu  button{
+    padding: 5px;
+    flex-grow: 1;
+    width: 50%;
+}
+#alcance img{
+    height: 2em;
+}
+#alcance button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu select{
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+}
+#menu div:nth-of-type(2){
+    height: 30px;
+}

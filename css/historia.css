@@ -1,0 +1,95 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 5px;
+}
+#more{
+    background-color: goldenrod;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    border-radius: 5px;
+}
+hr{
+    width: 80%;
+    border: 0.5px solid black;
+    margin: 5px;
+}
+#herramientas {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    gap: 15px; 
+    padding: 10px;
+    width: 100%;
+    height: 10em;
+}
+
+#herramientas::-webkit-scrollbar {
+    display: none;
+}
+#herramientas a {
+    flex: 0 0 85%; 
+    scroll-snap-align: center;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+.seru {
+    border-radius: 15px;
+    padding: 10px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+    cursor: pointer;
+    
+}
+
+.seru:hover{
+    transform: scale(1.05);
+}
+.seru h3{
+    z-index: 3;
+}
+.seru::before{
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1; 
+    pointer-events: none;
+    border-radius: 15px;
+}
+#one{ background-image: url(/Resource/Img/ViajeDelHeroe.jpg); }
+#two{ background-image: url(/Resource/Img/EstructuraDeTresActos.jpg); }
+#three{ background-image: url(/Resource/Img/InMediaRes.jpg); }
+#four{ background-image: url(/Resource/Img/ArmaDeChejob.jpg); }
+#five{ background-image: url(/Resource/Img/Analepsis.webp); }
+#six{ background-image: url(/Resource/Img/cliffhanger.jpg); }
+
+@media screen and (min-width:481px) and (max-width:768px){
+    
+}
+
+/*-----------------------ESCRITORIO-----------------*/
+@media screen and (min-width:769px){
+    #herramientas{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        height: 20em;
+    }
+
+}

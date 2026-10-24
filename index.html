@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="Resource/Img/Logo.png" id="logo" alt="">
+            <h1>E-Criva</h1>
+        </div>
+        <div id="sech" onclick="">
+            <img src="Resource/Img/Luna.png" alt="">
+        </div>   
+    </header>
+    <nav>
+        <div>
+            <p id="tapaSub">Mundo ▼</p> 
+            <div id="subsu">
+                <p onclick="window.location.href='html/historias.html'">Historia</p>
+                <p onclick="window.location.href='html/objetos.html'">Objeto</p>
+                <p onclick="window.location.href='html/personajes.html'">Personajes</p>
+            </div>
+        </div>
+        
+        <p onclick="window.location.href='html/galeria.html'">Galeria</p>
+        <p onclick="window.location.href='html/contacto.html'">Contactos</p>
+    </nav>
+    <main>
+        <div id="fist">
+            <h5 id="frase" align="center"></h5>
+            <legend id="autor"></legend>
+            <button id="start" onclick="window.location.href='html/historias.html'">Empezar a crear</button>
+        </div>
+        <div id="seco">
+            <div class="promo-card">
+                <img src="Resource/Img/Universo.png" alt="">
+                <h3>Forja tu propio universo</h3>
+                <p>Desde la geografía hasta la mitología, estructura las reglas de tu mundo en un solo lugar. Mantén la coherencia de tu narrativa, organiza tus líneas temporales y evita los vacíos argumentales antes de escribir la primera línea.</p>
+            </div>
+
+            <div class="promo-card">
+                <img src="Resource/Img/Personaje.png" alt="">
+                <h3>Da vida a tus personajes</h3>
+                <p>Construye perfiles profundos, entrelaza sus pasados y define sus motivaciones. Una gran historia necesita protagonistas, antagonistas y personajes secundarios con un desarrollo que conecte verdaderamente con tu audiencia.</p>
+            </div>
+
+            <div class="promo-card">
+                <img src="Resource/Img/reliquia.png" alt="">
+                <h3>Documenta cada reliquia</h3>
+                <p>Registra los objetos mágicos, armas legendarias o tecnología clave de tu trama. Dale peso histórico a cada artefacto y define cómo impactan el viaje de tus protagonistas a lo largo de los distintos medios.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="super">
+            <div>
+                <h3>Documentos legales</h3>
+                <div id="leyes">
+                    <p>Aviso legal</p>
+                    <p>Política de privacidad y protección de datos</p>
+                    <p>Política de cookies</p>
+                    <p>Términos y condiciones de uso</p>
+                </div>
+            </div>
+            <div>
+                <h3 id="RedesTitle">Redes sociales</h3>
+                <div id="media">        
+                    <img src="Resource/Img/DA.png" alt="">
+                    <img src="Resource/Img/Facebook.png" alt="">
+                    <img src="Resource/Img/Tiktok.png" alt="">
+                    <img src="Resource/Img/Youtube.png" alt="">
+                </div>
+            </div>
+        </div>
+        <legend> Copyright © 2026 e-criva. All rights reserved. </legend>
+    </footer>
+    <div id="Shadow">
+        <img src="" alt="">
+    </div>
+    <script>
+        let dark = document.getElementById("sech")
+        dark.addEventListener("click",()=>{
+            let img = dark.children.item(0)
+            let all =document.querySelectorAll("*")
+            if(all[1].classList.contains("oscuro")) img.setAttribute("src","Resource/img/Sol.png")
+            else img.setAttribute("src","Resource/img/Luna.png")
+            all.forEach(Element=>{
+                Element.classList.toggle("oscuro")
+            })
+        })
+    </script>
+    <script>
+        const frasesEscritores = [
+  {
+    id: 1,
+    frase: "Siempre imaginé que el Paraíso sería algún tipo de biblioteca.",
+    autor: "Jorge Luis Borges",
+    tema: "Libros"
+  },
+  {
+    id: 2,
+    frase: "El amor es tan corto, y el olvido es tan largo.",
+    autor: "Pablo Neruda",
+    tema: "Amor"
+  },
+  {
+    id: 3,
+    frase: "No hay barrera, cerradura ni cerrojo que puedas imponer a la libertad de mi mente.",
+    autor: "Virginia Woolf",
+    tema: "Libertad"
+  },
+  {
+    id: 4,
+    frase: "El amor no mira con los ojos, sino con el alma.",
+    autor: "William Shakespeare",
+    tema: "Amor"
+  },
+  {
+    id: 5,
+    frase: "La vida no es la que uno vivió, sino la que uno recuerda y cómo la recuerda para contarla.",
+    autor: "Gabriel García Márquez",
+    tema: "Vida"
+  },
+  {
+    id: 6,
+    frase: "Aprender a leer es lo más importante que me ha pasado en la vida.",
+    autor: "Mario Vargas Llosa",
+    tema: "Lectura"
+  }
+];
+    document.addEventListener("DOMContentLoaded",()=>{
+        let frase = document.getElementById("frase")
+        let autor = document.getElementById("autor")
+        let indice = Math.floor(Math.random() * frasesEscritores.length);
+        frase.innerText = frasesEscritores[indice].frase
+        autor.innerText = "— " + frasesEscritores[indice].autor
+    })
+    </script>
+    <script src="js/base.js"></script>
+    <script type="module" src="">
+        import { openDB } from 'idb';
+    </script>
+</body>
+</html>

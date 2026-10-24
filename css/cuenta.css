@@ -1,0 +1,9 @@
+main{
+    padding: 5px;
+}
+#pic{
+    width: 6em;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 8em;
+}

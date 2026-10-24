@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contacto.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img onclick="window.location.href='../index.html'" src="/Resource/Img/Logo.png" id="logo" alt="">
+            <h1>E-Criva</h1>
+        </div>
+        <div id="sech" onclick="">
+            <img src="/Resource/Img/Luna.png" alt="">
+        </div>   
+    </header>
+    <nav>
+        <div>
+            <p id="tapaSub">Mundo ▼</p> 
+            <div id="subsu">
+                <p onclick="window.location.href='historias.html'">Historia</p>
+                <p onclick="window.location.href='objetos.html'">Objeto</p>
+                <p onclick="window.location.href='personajes.html'">Personajes</p>
+            </div>
+        </div>
+        
+        <p onclick="window.location.href='galeria.html'">Galeria</p>
+        <p onclick="window.location.href='contacto.html'">Contactos</p>
+    </nav>
+    <main>
+        <section id="buk">
+            <div id="redes">
+                <h4>Nuestras redes sociales</h4>
+                <div id="socials">
+                    <img src="/Resource/Img/GreviantArt.png" alt=""><img src="/Resource/Img/Gracebook.png" alt=""><img src="/Resource/Img/GrikTok.png" alt=""><img src="/Resource/Img/Grytube.png" alt="">
+                </div>
+            </div>
+            <div>
+                <h4>Contactanos</h4>
+                <form action="https://formspree.io/f/xgaogndp" method="post" id="mail">
+                    <legend>Nombre</legend>
+                    <input type="text" name="name" id="name" placeholder="Octavio Lazaro">
+                    <legend>Correo</legend>
+                    <input type="text" name="correo" id="correo" placeholder="Octa@gmail.com">
+                    <legend>Mensaje</legend>
+                    <textarea name="txt" id="txt"></textarea>
+                    <input type="submit" value="subir">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="super">
+            <div>
+                <h3>Documentos legales</h3>
+                <div id="leyes">
+                    <p>Aviso legal</p>
+                    <p>Política de privacidad y protección de datos</p>
+                    <p>Política de cookies</p>
+                    <p>Términos y condiciones de uso</p>
+                </div>
+            </div>
+            <div>
+                <h3 id="RedesTitle">Redes sociales</h3>
+                <div id="media">        
+                    <img src="/Resource/Img/DA.png" alt="">
+                    <img src="/Resource/Img/Facebook.png" alt="">
+                    <img src="/Resource/Img/Tiktok.png" alt="">
+                    <img src="/Resource/Img/Youtube.png" alt="">
+                </div>
+            </div>
+        </div>
+        <legend> Copyright © 2026 e-criva. All rights reserved. </legend>
+    </footer>
+    <div id="Shadow">
+        <img src="" alt="">
+    </div>
+    <script>
+        let dark = document.getElementById("sech")
+        dark.addEventListener("click",()=>{
+            let img = dark.children.item(0)
+            let all =document.querySelectorAll("*")
+            if(all[1].classList.contains("oscuro")) img.setAttribute("src","/Resource/img/Sol.png")
+            else img.setAttribute("src","/Resource/img/Luna.png")
+            all.forEach(Element=>{
+                Element.classList.toggle("oscuro")
+            })
+        })
+    </script>
+    <script src="/js/base.js"></script>
+    <script type="module" src="">
+        import { openDB } from 'idb';
+    </script>
+</body>
+</html>
